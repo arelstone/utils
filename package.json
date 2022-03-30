@@ -1,11 +1,21 @@
 {
   "name": "@arelstone/utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A collection of personal utility helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "keywords": [
+    "utils",
+    "utilities",
+    "collection",
+    "minimalistic",
+    "es",
+    "es6",
+    "typescript"
+  ],
   "scripts": {
+    "lint": "eslint .",
     "test": "jest",
     "build": "tsc"
   },
@@ -21,6 +31,7 @@
     "node": ">= 16"
   },
   "devDependencies": {
+    "@arelstone/eslint-config-react-native-typescript": "^1.1.1",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "jest": "^27.5.1",

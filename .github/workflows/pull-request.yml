@@ -14,9 +14,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: paralenz/actions/setup-node@master
+      - name: Set up Node
+        uses: actions/setup-node@v3
         with:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
-      - run: yarn lint
-      - run: yarn test --passWithNoTests
-      - run: yarn build
+          node-version: 16
+
+      - name: Cache dependencies
+        id: cache-deps
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --ignore-scripts
+      
+      - name: Run linting
+        run: yarn lint
+
+      - name: Run tests
+        run: yarn test --passWithNoTests
+      
+      - name: Run build
+        run: yarn build
