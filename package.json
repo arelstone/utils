@@ -1,12 +1,17 @@
 {
   "name": "@arelstone/utils",
   "version": "0.0.3",
-  "description": "",
+  "description": "A collection of personal utility helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "lint": "eslint .",
     "test": "jest",
     "build": "tsc"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "homepage": "https://github.com/arelstone/utils",
   "repository": {
@@ -20,6 +25,7 @@
     "node": ">= 16"
   },
   "devDependencies": {
+    "@paralenz/eslint-config-typescript-react": "^1.0.7",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "jest": "^27.5.1",
