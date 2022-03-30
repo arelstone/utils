@@ -15,10 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: paralenz/actions/setup-node@master
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         with:
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_AUTH_TOKEN }}
       - run: yarn lint
       - run: yarn test --passWithNoTests
       - run: yarn build
