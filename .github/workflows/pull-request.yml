@@ -20,5 +20,6 @@ jobs:
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           registry-url: https://registry.npmjs.org
-      - name: Run tests
-        run: yarn test --passWithNoTests
+      - run: yarn lint
+      - run: yarn test --passWithNoTests
+      - run: yarn build

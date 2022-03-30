@@ -4,6 +4,7 @@
   "description": "A collection of personal utility helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
