@@ -19,7 +19,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
-          registry-url: https://registry.npmjs.org
       - run: yarn lint
       - run: yarn test --passWithNoTests
       - run: yarn build
