@@ -6,7 +6,6 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint .",
     "test": "jest",
     "build": "tsc"
   },
@@ -22,7 +21,6 @@
     "node": ">= 16"
   },
   "devDependencies": {
-    "@paralenz/eslint-config-typescript-react": "^1.0.7",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "jest": "^27.5.1",

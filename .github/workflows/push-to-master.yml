@@ -12,12 +12,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: //npm.pkg.github.com/
-        
-      - name: Set up GitHub package registry auth token
-        run: |
-          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GH_AUTH_TOKEN }}
-          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Cache dependencies
         id: cache-deps
@@ -28,9 +22,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile --ignore-scripts
-
-      - name: Run linting
-        run: yarn lint
 
       - name: Run tests
         run: yarn test --passWithNoTests
@@ -43,7 +34,6 @@ jobs:
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           access: public
-          registry: https://registry.npmjs.org/
       
       - name: Extract version from package.json
         id: extract_version
