@@ -43,6 +43,7 @@ jobs:
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           access: public
+          registry: https://registry.npmjs.org/
       
       - name: Extract version from package.json
         id: extract_version
