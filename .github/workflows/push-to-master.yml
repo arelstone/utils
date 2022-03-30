@@ -24,7 +24,7 @@ jobs:
         uses: Saionaro/extract-package-version@v1.0.6
       - uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
-          repo_token: ${{ secrets.NPM_AUTH_TOKEN }}
+          repo_token: ${{ secrets.GH_AUTH_TOKEN }}
           prerelease: false
           title: v${{ steps.extract_version.outputs.version }}
           automatic_release_tag: v${{ steps.extract_version.outputs.version }}
