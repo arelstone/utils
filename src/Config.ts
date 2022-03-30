@@ -9,5 +9,7 @@ export class Config {
         return value;
     }
 
-    static isDevelopment: boolean = Config.get('NODE_ENV') === 'development'
+    static isDevelopment: boolean = Config.get('NODE_ENV') === 'development';
+    
+    static env: string = Config.get('NODE_ENV');
 }
