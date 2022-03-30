@@ -1,6 +1,6 @@
 {
   "name": "@arelstone/utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A collection of personal utility helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
