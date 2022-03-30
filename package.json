@@ -10,10 +10,6 @@
     "test": "jest",
     "build": "tsc"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "access": "public"
-  },
   "homepage": "https://github.com/arelstone/utils",
   "repository": {
     "type": "git",
