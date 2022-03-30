@@ -8,21 +8,45 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: paralenz/actions/setup-node@master
+      - name: Set up Node
+        uses: actions/setup-node@v3
         with:
-          token: ${{ secrets.GH_AUTH_TOKEN }}
+          node-version: 16
+          registry-url: //npm.pkg.github.com/
+        
+      - name: Set up GitHub package registry auth token
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}
+          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Cache dependencies
+        id: cache-deps
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --ignore-scripts
+
       - name: Run linting
-        run: npm run lint
+        run: yarn lint
+
       - name: Run tests
-        run: npm run test --passWithNoTests
+        run: yarn test --passWithNoTests
+      
       - name: Run build
-        run: npm run build
-      - name: Publish
+        run: yarn build
+      
+      - name: Publish to NPM
         run: npm publish --access public
-      - name: Tag and Release
+      
+      - name: Extract version from package.json
         id: extract_version
         uses: Saionaro/extract-package-version@v1.0.6
-      - uses: marvinpinto/action-automatic-releases@v1.2.1
+
+      - name: Create release on github
+        uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
           repo_token: ${{ secrets.GH_AUTH_TOKEN }}
           prerelease: false
