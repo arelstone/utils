@@ -10,9 +10,9 @@
     "@jridgewell/trace-mapping" "^0.3.0"
 
 "@arelstone/eslint-config-react-native-typescript@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@arelstone/eslint-config-react-native-typescript/-/eslint-config-react-native-typescript-1.1.1.tgz#7b41d02b84965f3d56101aa8cc22c54614c873b7"
-  integrity sha512-5Su3+Qgd78zftVb9RcHttRDaKBh86P8VaTlfnckCF2BZ6onEYo84WxHtqUpfxKht8NROF4FKWRkE6eIquXIRNw==
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@arelstone/eslint-config-react-native-typescript/-/eslint-config-react-native-typescript-1.1.5.tgz#206744196161f8f9686a27e598500d625c2188af"
+  integrity sha512-ieTTiizzi+KtyKizDf2ka50R8uuPwQRfsh/Nk5UUyvN0dD7RX2klyIfzhihWX6YSLX4Jy2E9JqwVwcVh/fTYWw==
   dependencies:
     "@react-native-community/eslint-config" "^3.0.1"
     "@typescript-eslint/eslint-plugin" "^5.17.0"
