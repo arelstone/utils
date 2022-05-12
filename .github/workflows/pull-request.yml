@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: paralenz/actions/gitmoji@master
+        with:
+          max-length: 100
 
   pull-request:
     name: Pull Request
